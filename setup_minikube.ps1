@@ -1,5 +1,6 @@
 # Create the Cluster
-minikube start --nodes 3 -p mwdb-cicd
+minikube start --kubernetes-version=v1.23.0 --memory=6g --bootstrapper=kubeadm --extra-config=kubelet.authentication-token-webhook=true --extra-config=kubelet.authorization-mode=Webhook --extra-config=scheduler.bind-address=0.0.0.0 --extra-config=controller-manager.bind-address=0.0.0.0 --nodes=3
+minikube addons disable metrics-server
 
 # Install ArgoCD 
 kubectl create namespace argocd
