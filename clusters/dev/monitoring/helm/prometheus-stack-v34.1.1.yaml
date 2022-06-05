@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: kube-prometheus-stack
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -10,9 +12,10 @@ spec:
   source:
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 30.0.1
+    targetRevision: 34.1.1
     helm:
       releaseName: kube-prometheus-stack
+      skipCrds: true
       values: |
         alertmanager:
           enabled: true
