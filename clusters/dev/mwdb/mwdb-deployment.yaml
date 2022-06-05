@@ -22,7 +22,7 @@ spec:
               value: redis://redis/
             - name: UWSGI_PROCESSES
               value: "4"
-          image: certpl/mwdb:228b960543ac63db4224823fecbc47f942a623ecfb7ed278d5b1a27e2ff2d922
+          image: certpl/mwdb:master
           name: mwdb
           ports:
             - containerPort: 8080
