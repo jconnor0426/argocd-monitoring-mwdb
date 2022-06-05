@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: karton-classifier
+  name: karton-classifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: karton-classifier
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: karton-classifier
+    spec:
+      containers:
+        - image: certpl/karton-classifier:84c642c666334db3df66b98752784c2044aa3c2d
+          name: karton-classifier
+          resources: {}
+      restartPolicy: Always
+status: {}

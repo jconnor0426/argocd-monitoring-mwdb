@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: karton-dashboard
+  name: karton-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: karton-dashboard
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: karton-dashboard
+    spec:
+      containers:
+        - image: certpl/karton-dashboard:8f5bdd94bed2ddff2ef4a826f8107a8ec11e8609
+          name: karton-dashboard
+          ports:
+            - containerPort: 5000
+          resources: {}
+      restartPolicy: Always
+status: {}

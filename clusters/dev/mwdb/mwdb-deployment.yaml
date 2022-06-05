@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: mwdb
+  name: mwdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mwdb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: mwdb
+    spec:
+      containers:
+        - env:
+            - name: MWDB_REDIS_URI
+              value: redis://redis/
+            - name: UWSGI_PROCESSES
+              value: "4"
+          image: certpl/mwdb:228b960543ac63db4224823fecbc47f942a623ecfb7ed278d5b1a27e2ff2d922
+          name: mwdb
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}

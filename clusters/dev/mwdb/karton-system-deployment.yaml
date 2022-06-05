@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: karton-system
+  name: karton-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: karton-system
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: karton-system
+    spec:
+      containers:
+        - args:
+            - --setup-bucket
+          command:
+            - karton-system
+          image: certpl/karton-system:cb68f9fd7a5e9dc6b6a8538d71ebc0e43f5cc69c
+          name: karton-system
+          resources: {}
+      restartPolicy: Always
+status: {}
