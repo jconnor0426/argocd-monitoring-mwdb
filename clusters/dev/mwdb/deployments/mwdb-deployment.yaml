@@ -21,7 +21,7 @@ spec:
             - name: MWDB_REDIS_URI
               value: redis://redis/
             - name: UWSGI_PROCESSES
-              value: "5"
+              value: "4"
           envFrom:
             - configMapRef: 
                 name: mwdb-config
