@@ -22,6 +22,11 @@ spec:
               value: redis://redis/
             - name: UWSGI_PROCESSES
               value: "4"
+          envFrom:
+            - configMapRef: 
+                name: mwdb-config
+            - secretRef:
+                name: mwdb-secrets
           image: certpl/mwdb:master
           name: mwdb
           ports:
