@@ -20,5 +20,10 @@ spec:
         - image: certpl/karton-mwdb-reporter:1afa32251b4826eac4386596b4a20f295699faec
           name: karton-mwdb-reporter
           resources: {}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
       restartPolicy: Always
 status: {}

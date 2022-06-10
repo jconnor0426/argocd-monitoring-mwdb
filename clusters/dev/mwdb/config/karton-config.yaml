@@ -1,0 +1,10 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: karton-config
+data:
+  KARTON_REDIS_HOST: redis
+  KARTON_MINIO_ADDRESS: nyc3.digitaloceanspaces.com
+  KARTON_MINIO_BUCKET: karton
+  KARTON_MINIO_SECURE: "1"
+  KARTON_MWDB_API_URL: http://mwdb.:8080/api/

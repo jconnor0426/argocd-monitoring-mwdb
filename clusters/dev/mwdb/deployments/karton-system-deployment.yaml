@@ -24,5 +24,10 @@ spec:
           image: certpl/karton-system:cb68f9fd7a5e9dc6b6a8538d71ebc0e43f5cc69c
           name: karton-system
           resources: {}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
       restartPolicy: Always
 status: {}

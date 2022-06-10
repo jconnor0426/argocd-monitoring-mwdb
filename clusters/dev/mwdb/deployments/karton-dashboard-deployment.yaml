@@ -22,5 +22,10 @@ spec:
           ports:
             - containerPort: 5000
           resources: {}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
       restartPolicy: Always
 status: {}
