@@ -17,12 +17,7 @@ spec:
         io.kompose.service: mwdb
     spec:
       containers:
-        - env:
-            - name: MWDB_REDIS_URI
-              value: redis://redis/
-            - name: UWSGI_PROCESSES
-              value: "4"
-          envFrom:
+        - envFrom:
             - configMapRef: 
                 name: mwdb-config
             - secretRef:
