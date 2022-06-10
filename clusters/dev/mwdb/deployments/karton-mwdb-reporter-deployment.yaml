@@ -17,7 +17,7 @@ spec:
         io.kompose.service: karton-mwdb-reporter
     spec:
       containers:
-        - image: certpl/karton-mwdb-reporter:1afa32251b4826eac4386596b4a20f295699faec
+        - image: certpl/karton-mwdb-reporter:f4729b0b7a099f7d97ce1d4b52adeece4705bf62
           name: karton-mwdb-reporter
           resources: {}
           envFrom:
