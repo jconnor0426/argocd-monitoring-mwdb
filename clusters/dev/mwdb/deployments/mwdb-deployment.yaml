@@ -22,6 +22,10 @@ spec:
                 name: mwdb-config
             - secretRef:
                 name: mwdb-secrets
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
           image: ghcr.io/jconnor0426/mwdb:e0138fb
           name: mwdb
           ports:
