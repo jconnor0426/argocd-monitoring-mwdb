@@ -20,5 +20,10 @@ spec:
         - image: certpl/karton-classifier:84c642c666334db3df66b98752784c2044aa3c2d
           name: karton-classifier
           resources: {}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
       restartPolicy: Always
 status: {}
