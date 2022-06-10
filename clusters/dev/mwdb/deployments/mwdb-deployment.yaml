@@ -27,7 +27,7 @@ spec:
                 name: mwdb-config
             - secretRef:
                 name: mwdb-secrets
-          image: ghcr.io/jconnor0426/mwdb:main
+          image: ghcr.io/jconnor0426/mwdb:a0fe2d6
           name: mwdb
           ports:
             - containerPort: 8080
