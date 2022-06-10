@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mwdb-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /mwdb
+          backend:
+            serviceName: mwdb
+            servicePort: 8080
+        - path: /dashboard
+          backend:
+            serviceName: karton-dashboard
+            servicePort: 8030
