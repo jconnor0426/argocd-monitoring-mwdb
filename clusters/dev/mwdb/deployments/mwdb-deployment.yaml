@@ -26,7 +26,7 @@ spec:
                 name: karton-config
             - secretRef:
                 name: karton-secrets
-          image: ghcr.io/jconnor0426/mwdb:e0138fb
+          image: ghcr.io/jconnor0426/mwdb:3ab85e1
           name: mwdb
           ports:
             - containerPort: 8080
