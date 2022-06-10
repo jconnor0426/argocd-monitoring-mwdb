@@ -25,5 +25,6 @@ spec:
                 name: karton-config
             - secretRef:
                 name: karton-secrets
+                
       restartPolicy: Always
 status: {}
