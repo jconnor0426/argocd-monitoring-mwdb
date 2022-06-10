@@ -21,13 +21,13 @@ spec:
             - name: MWDB_REDIS_URI
               value: redis://redis/
             - name: UWSGI_PROCESSES
-              value: "5"
+              value: "4"
           envFrom:
             - configMapRef: 
                 name: mwdb-config
             - secretRef:
                 name: mwdb-secrets
-          image: certpl/mwdb:master
+          image: ghcr.io/jconnor0426/mwdb:main
           name: mwdb
           ports:
             - containerPort: 8080
