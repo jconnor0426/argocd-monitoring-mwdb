@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: karton-yaramatcher
+  name: karton-yaramatcher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: karton-yaramatcher
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: karton-yaramatcher
+    spec:
+      containers:
+        - image: certpl/karton-yaramatcher:67b3745f8b9aeeab67105ce72ead953bd0f13204
+          name: karton-yaramatcher
+          resources: {}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
+      restartPolicy: Always
+status: {}
