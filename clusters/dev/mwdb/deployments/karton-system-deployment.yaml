@@ -21,7 +21,7 @@ spec:
             - --setup-bucket
           command:
             - karton-system
-          image: certpl/karton-system:cb68f9fd7a5e9dc6b6a8538d71ebc0e43f5cc69c
+          image: certpl/karton-system:7ef22b7906a4d50cd73c024da0d7acba76218734
           name: karton-system
           resources: {}
           envFrom:
