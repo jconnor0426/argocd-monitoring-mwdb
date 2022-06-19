@@ -1,0 +1,3 @@
+{{- include "karton-analyzer-template.deployment" (list . "karton-yaramatcher.deployment") -}}
+{{- define "karton-classifier.deployment" -}}
+{{- end -}}
