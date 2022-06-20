@@ -9,7 +9,7 @@
 kartons:
   - name: "karton-yaramatcher"
     image: "ghcr.io/jconnor0426/karton-yaramatcher"
-    imageTag: "10003f9"
+    imageTag: "70ff4e3"
     replicas: 1
   - name: "karton-classifier"
     image: "certpl/karton-classifier"
