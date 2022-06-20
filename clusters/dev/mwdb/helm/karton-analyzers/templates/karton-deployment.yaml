@@ -1,0 +1,30 @@
+{{- range .Values.kartons }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: {{ .name }}
+  name: {{ .name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: {{ .name }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.service: {{ .name }}
+    spec:
+      containers:
+        - image: {{ .image }}:{{ .imageTag }}
+          name: {{ .name }}
+          envFrom:
+            - configMapRef: 
+                name: karton-config
+            - secretRef:
+                name: karton-secrets
+      restartPolicy: Always
+---
+{{- end -}}

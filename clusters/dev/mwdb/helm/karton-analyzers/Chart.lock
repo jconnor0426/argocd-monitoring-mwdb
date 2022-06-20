@@ -1,6 +1,0 @@
-dependencies:
-- name: karton-analyzer-template
-  repository: file://../karton-analyzer-template
-  version: 0.1.0
-digest: sha256:b7747b8671f1bde74b7b49cb5bddbf5d62abd9bd310d90397b2d85f52fe06666
-generated: "2022-06-19T13:45:47.3404931-04:00"

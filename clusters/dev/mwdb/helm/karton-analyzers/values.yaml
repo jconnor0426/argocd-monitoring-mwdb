@@ -1,1 +1,11 @@
-imageTag: abc123
+name: karton-yaramatcher
+
+kartons:
+  - name: karton-yaramatcher
+    image: "ghcr.io/jconnor0426/karton-yaramatcher"
+    imageTag: "abc123"
+    replicas: 1
+  - name: karton-classifier
+    image: "ghcr.io/jconnor0426/karton-classifier"
+    imageTag: "abc123"
+    replicas: 1
