@@ -6,7 +6,7 @@ metadata:
     io.kompose.service: {{ .name }}
   name: {{ .name }}
 spec:
-  replicas: 1
+  replicas: {{ int .replicas }}
   selector:
     matchLabels:
       io.kompose.service: {{ .name }}
@@ -20,11 +20,13 @@ spec:
       containers:
         - image: {{ .image }}:{{ .imageTag }}
           name: {{ .name }}
+          resources: {}
           envFrom:
             - configMapRef: 
                 name: karton-config
             - secretRef:
                 name: karton-secrets
       restartPolicy: Always
+status: {}
 ---
 {{- end -}}
