@@ -6,7 +6,7 @@ metadata:
     io.kompose.service: {{ .name }}
   name: {{ .name }}
 spec:
-  replicas: {{ int .replicas }}
+  replicas: {{ default 1 .replicas | int }}
   selector:
     matchLabels:
       io.kompose.service: {{ .name }}

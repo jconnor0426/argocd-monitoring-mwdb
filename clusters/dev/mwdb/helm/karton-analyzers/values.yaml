@@ -18,3 +18,4 @@ kartons:
   - name: "karton-mwdb-reporter"
     image: "certpl/karton-mwdb-reporter"
     imageTag: "f4729b0b7a099f7d97ce1d4b52adeece4705bf62"
+    replicas: 1
